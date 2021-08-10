@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-eslint-rules"
+  ],
+  "rules": {
+    "linebreak-style": "unix",
+    "no-console": [true, "log", "error"],
+    "variable-name": ["allow-leading-underscore"],
+    "interface-name": [true, "never-prefix"],
+    "object-literal-sort-keys": {
+      "options": "match-declaration-order-only"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "name": "umpapa",
+  "version": "1.0.0",
+  "description": "An app for creating avatars.",
+  "scripts": {
+    "build": "npm run clean && npm run copy-assets && npm run build:js",
+    "build:js": "cross-env NODE_ENV=production parcel build src/index.html",
+    "clean": "rimraf ./dist",
+    "copy-assets": "ncp ./src/assets ./dist",
+    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
+    "format:check": "prettier --check --ignore-path .gitignore --write --plugin-search-dir=. .",
+    "lint": "eslint --max-warnings=0 ./src && npm run format:check",
+    "lint:fix": "eslint --fix --max-warnings=0 ./src && npm run format",
+    "test": "cross-env NODE_ENV=test jest",
+    "serve": "http-server -a localhost -p 8000 ./dist",
+    "start": "npm run clean && npm run copy-assets && npm run start:js",
+    "start:js": "parcel src/index.html --port 8000"
+  },
+  "author": "Jen Garcia <jen@haverstack.com> (https://haverstack.com/)",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/cuibonobo/umpapa/issues"
+  },
+  "homepage": "https://github.com/cuibonobo/umpapa#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.3",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "autoprefixer": "^10.3.7",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.0.1",
+    "eslint-config-preact": "^1.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsdoc": "^36.1.1",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "http-server": "^13.0.2",
+    "jest": "^27.3.1",
+    "ncp": "^2.0.0",
+    "parcel": "^2.0.0",
+    "postcss": "^8.3.11",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "tailwindcss": "^2.2.17",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "preact": "^10.5.15"
+  },
+  "alias": {
+    "react": "preact/compat",
+    "react-dom/test-utils": "preact/test-utils",
+    "react-dom": "preact/compat"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "prefer-arrow"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "preact",
+      "prettier"
+    ],
+    "rules": {
+      "prefer-arrow/prefer-arrow-functions": [
+        "warn",
+        {
+          "disallowPrototype": true,
+          "singleReturnOnly": false,
+          "classPropertiesAllowed": false
+        }
+      ]
+    }
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "preset": "ts-jest",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx,js}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": -5
+      }
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "printWidth": 100,
+    "endOfLine": "auto"
+  }
+}

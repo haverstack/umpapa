@@ -5,7 +5,7 @@ workers_dev = true
 compatibility_date = "2021-10-22"
 
 kv_namespaces = [
-    { binding = "UMPAPA", id = "c0cddc7e307c4deb8974fd12b047519c" }
+    { binding = "UMPAPA", preview_id = "6689ec97d2e34468930e092c7ac517d0", id = "c0cddc7e307c4deb8974fd12b047519c" }
 ]
 
 [build]

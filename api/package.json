@@ -5,10 +5,14 @@
   "main": "dist/worker.js",
   "scripts": {
     "build": "webpack",
+    "build:watch": "webpack --watch",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "format:check": "prettier --check --ignore-path .gitignore --write --plugin-search-dir=. .",
     "lint": "eslint --max-warnings=0 ./src && npm run format:check",
     "lint:fix": "eslint --fix --max-warnings=0 ./src && npm run format",
+    "preview": "wrangler preview",
+    "publish": "wrangler publish",
+    "start": "wrangler dev",
     "test": "jest --verbose"
   },
   "author": "Jen Garcia <jen@haverstack.com> (https://haverstack.com/)",
@@ -20,11 +24,24 @@
   "eslintConfig": {
     "root": true,
     "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "prefer-arrow"
+    ],
     "extends": [
       "eslint:recommended",
       "plugin:@typescript-eslint/recommended",
       "prettier"
-    ]
+    ],
+    "rules": {
+      "prefer-arrow/prefer-arrow-functions": [
+        "warn",
+        {
+          "disallowPrototype": true,
+          "singleReturnOnly": false,
+          "classPropertiesAllowed": false
+        }
+      ]
+    }
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.0.0",
@@ -35,6 +52,7 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-typescript": "^3.0.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
     "jest": "^27.3.1",
     "prettier": "^2.4.1",
     "service-worker-mock": "^2.0.5",
@@ -45,7 +63,6 @@
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
-    "eslint-plugin-prefer-arrow": "^1.2.3",
     "itty-router": "^2.4.4"
   },
   "jest": {

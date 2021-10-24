@@ -40,6 +40,9 @@ npm run build
 npm run serve
 ```
 
+## Additional Documentation
+Documentation related to the design and development of **umpapa** can be found in the [`docs`](./docs/README.md) directory.
+
 ## Author
 This app was written by [@cuibonobo](https://github.com/cuibonobo/).
 

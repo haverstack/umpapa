@@ -1,10 +1,12 @@
 name = "umpapa-api"
 type = "javascript"
-zone_id = ""
-account_id = ""
-route = ""
+account_id = "132eb96c7d7430761766e87b86b1a99c"
 workers_dev = true
 compatibility_date = "2021-10-22"
+
+kv_namespaces = [
+    { binding = "UMPAPA", id = "c0cddc7e307c4deb8974fd12b047519c" }
+]
 
 [build]
 command = "npm install && npm run build"

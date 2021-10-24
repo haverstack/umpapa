@@ -10,18 +10,17 @@ This app is designed to be "serverless" and consists of two parts:
 This is a hobby project in active development for the [Cloudflare Developer Summer Challenge](https://challenge.developers.cloudflare.com/) (2021).
 
 ## Getting Started
-The `app` is the most visible part of the application, so we'll focus on that. To get a version of it running in your local environment, clone this repo and then run:
+To get the **umpapa** application running in your local environment, clone this repo and run:
 
 ```bash
-cd app
 npm install
 npm run start
 ```
 
-You should see a message saying you have a server running at http://localhost:8000. Navigate to that URL in your browser to check out the app!
+This will build and run both the `app` and `api` development servers at the same. Once both parts are built and ready, navigate to http://localhost:8000 in your browser to check out the app! You will also notice that any changes you make to the code will kick off a new rebuild. Refresh the browser to see the new changes.
 
 ## Development Scripts
-Besides running a development server, there are other useful scripts that can aid in development.
+Besides running a development server, there are other useful scripts that can aid in development. Check the `scripts` section of the `package.json` in both the `app` and `api` directories to see the full list of scripts. Scripts that are common to both include:
 
 ```bash
 # Running tests
@@ -35,9 +34,6 @@ npm run format
 
 # Building a production version of the site
 npm run build
-
-# Previewing a pre-built production site
-npm run serve
 ```
 
 ## Additional Documentation

@@ -1,0 +1,23 @@
+{
+  "name": "umpapa",
+  "version": "1.0.0",
+  "description": "An app for creating avatars.",
+  "scripts": {
+    "watch-api": "cd api && npm run start",
+    "watch-app": "cd app && npm run start",
+    "start": "concurrently -k -p \"[{name}]\" -c \"cyan.bold,green.bold\" \"npm:watch-api\" \"npm:watch-app\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuibonobo/umpapa.git"
+  },
+  "author": "Jen Garcia <jen@haverstack.com> (https://haverstack.com/)",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/cuibonobo/umpapa/issues"
+  },
+  "homepage": "https://github.com/cuibonobo/umpapa#readme",
+  "devDependencies": {
+    "concurrently": "^6.3.0"
+  }
+}

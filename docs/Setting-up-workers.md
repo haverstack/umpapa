@@ -55,5 +55,23 @@ Once the namespace has been declared, we can then use the `get`, `put`, `delete`
 await UMPAPA.put("key", "value");
 ```
 
+### Namespace previews
+If you run a worker in development mode that has KV namespaces enabled, you may encounter the following error:
+```text
+Error: In order to preview a worker with KV namespaces, you must designate a preview_id in your configuration file for each KV namespace you'd like to preview.
+```
+
+To fix the error, create a preview ID for the same namespace, like this:
+```bash
+wrangler kv:namespace create "UMPAPA" --preview
+```
+
+The CLI will then direct you to update the `wrangler.toml` file with the new preview ID. For this app it looks like:
+```toml
+kv_namespaces = [
+    { binding = "UMPAPA", preview_id = "6689ec97d2e34468930e092c7ac517d0", id = "c0cddc7e307c4deb8974fd12b047519c" }
+]
+```
+
 ## Deploying workers to production
 **TODO**

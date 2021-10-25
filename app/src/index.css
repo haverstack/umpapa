@@ -3,11 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  #base > header,
-  #base > main,
-  #base > footer {
-    @apply max-w-6xl;
-  }
   #base > footer a {
     @apply text-gray-500;
   }

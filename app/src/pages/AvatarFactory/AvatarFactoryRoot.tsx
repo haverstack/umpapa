@@ -4,7 +4,7 @@ import Base from '../Base';
 
 export const AvatarFactoryRoot = () => {
   return (
-    <Base title="Avatar Factory">
+    <Base title="Avatar Factory" isFullScreen={true}>
       <Outlet />
     </Base>
   );

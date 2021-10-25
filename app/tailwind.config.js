@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./src/index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  purge: ['./src/index.html', './src/**/*.{js,ts,jsx,tsx}', './src/**/*.css'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -29,7 +29,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      padding: ['first', 'last'],
+      margin: ['first', 'last'],
+    },
   },
   plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 };

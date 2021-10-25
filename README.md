@@ -26,11 +26,17 @@ Besides running a development server, there are other useful scripts that can ai
 # Running tests
 npm run test
 
-# Linting
+# Check for linting issues
 npm run lint
 
-# Formatting
+# Fix linting issues
+npm run lint:fix
+
+# Fix formatting
 npm run format
+
+# Check for formatting issues
+npm run format:check
 
 # Building a production version of the site
 npm run build

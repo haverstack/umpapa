@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  a {
+    @apply underline;
+  }
+  a:hover {
+    @apply bg-red-200;
+  }
+
+  #top-bar a {
+    @apply no-underline;
+  }
+  #top-bar a:hover {
+    @apply underline;
+    @apply bg-transparent;
+  }
+}

@@ -25,13 +25,11 @@ module.exports = {
             maxWidth: '72ch',
           },
         },
-      })
+      }),
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/typography')
-  ],
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 };

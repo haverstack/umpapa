@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-  a {
-    @apply underline;
+  #base>header, #base>main, #base>footer {
+    @apply max-w-6xl;
   }
-  a:hover {
-    @apply bg-red-200;
+  #base>footer a {
+    @apply text-gray-500;
   }
-
+  #base>footer a:hover {
+    @apply text-gray-600;
+  }
   #top-bar a {
     @apply no-underline;
   }

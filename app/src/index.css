@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-  #base>header, #base>main, #base>footer {
+  #base > header,
+  #base > main,
+  #base > footer {
     @apply max-w-6xl;
   }
-  #base>footer a {
+  #base > footer a {
     @apply text-gray-500;
   }
-  #base>footer a:hover {
+  #base > footer a:hover {
     @apply text-gray-600;
   }
   #top-bar a {

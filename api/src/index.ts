@@ -1,8 +1,8 @@
 import { corsHeaders, handleOptions } from './cors';
 
-const withStatus = (status: number = 200, headers?: {[key: string]: string}) => ({
+const withStatus = (status = 200, headers?: { [key: string]: string }) => ({
   status,
-  headers: { ...corsHeaders, ...(headers || {}) }
+  headers: { ...corsHeaders, ...(headers || {}) },
 });
 
 const handleRequest = async (request: Request): Promise<Response> => {

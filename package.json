@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "An app for creating avatars.",
   "scripts": {
+    "clean-api": "cd api && npm run clean",
+    "clean-app": "cd app && npm run clean",
+    "clean-app:all": "cd app && npm run clean:all",
+    "clean": "npm run clean-api && npm run clean-app",
+    "clean:all": "npm run clean-api && npm run clean-app:all",
     "watch-api": "cd api && npm run start",
     "watch-app": "cd app && npm run start",
     "start": "concurrently -k -p \"[{name}]\" -c \"cyan.bold,green.bold\" \"npm:watch-api\" \"npm:watch-app\""

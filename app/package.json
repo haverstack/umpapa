@@ -6,6 +6,8 @@
     "build": "npm run clean && npm run copy-assets && npm run build:js",
     "build:js": "cross-env NODE_ENV=production parcel build src/index.html",
     "clean": "rimraf ./dist",
+    "clean:cache": "rimraf ./.parcel-cache",
+    "clean:all": "npm run clean && npm run clean:cache",
     "copy-assets": "ncp ./src/assets ./dist",
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "format:check": "prettier --check --ignore-path .gitignore --write --plugin-search-dir=. .",

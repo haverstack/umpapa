@@ -22,7 +22,7 @@ const ContainerApp = (props: { children: ComponentChildren }) => {
 };
 
 const FullScreenApp = (props: { children: ComponentChildren }) => {
-  return <main class="bg-white w-screen h-screen">{props.children}</main>;
+  return <main class="bg-white w-screen h-screen flex flex-row">{props.children}</main>;
 };
 
 const Base = (props: { title?: string; isFullScreen?: boolean; children: ComponentChildren }) => {

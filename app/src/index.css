@@ -3,6 +3,26 @@
 @tailwind utilities;
 
 @layer base {
+  label {
+    @apply text-gray-800;
+  }
+  input,
+  textarea {
+    @apply block;
+    @apply my-2;
+  }
+  input[type='text'],
+  textarea {
+    @apply rounded-md;
+    @apply border-gray-400;
+    @apply w-full;
+  }
+  input[type='text']:focus-visible,
+  textarea:focus-visible {
+    @apply ring-2;
+    @apply ring-red-400;
+    @apply border-transparent;
+  }
   #base > footer a {
     @apply text-gray-500;
   }

@@ -26,7 +26,7 @@
   "homepage": "https://github.com/cuibonobo/umpapa#readme",
   "devDependencies": {
     "@types/jest": "^27.0.2",
-    "@types/node": "^16.11.3",
+    "@types/node": "^16.11.6",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "autoprefixer": "^10.3.7",
@@ -72,6 +72,7 @@
       "prettier"
     ],
     "rules": {
+      "no-undef": "off",
       "prefer-arrow/prefer-arrow-functions": [
         "warn",
         {

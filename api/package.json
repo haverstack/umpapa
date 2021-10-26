@@ -66,7 +66,8 @@
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
-    "itty-router": "^2.4.4"
+    "itty-router": "^2.4.4",
+    "nanoid": "^3.1.30"
   },
   "jest": {
     "transform": {

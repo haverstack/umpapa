@@ -7,8 +7,10 @@ const Home = () => {
   const [message, setMessage] = useState('Loading...');
 
   const getMessage = async () => {
-    const resp = await api.get('/');
-    setMessage(await resp.text());
+    const data = await api.get('/');
+    if (typeof data['message'] === 'string') {
+      setMessage(data['message']);
+    }
   };
 
   useEffect(() => {

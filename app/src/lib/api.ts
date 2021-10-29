@@ -3,12 +3,23 @@ const BASE_URL =
     ? 'https://umpapa-api.haverstack.workers.dev'
     : 'http://localhost:8787';
 
-export const getUrl = (path: string): string => {
+const getUrl = (path: string): string => {
   return new URL(path, BASE_URL).href;
+};
+
+const isResponseError = (response: Response) => {
+  return response.status < 200 || response.status >= 400;
+};
+
+const throwOnResponseError = async (response: Response) => {
+  if (isResponseError(response)) {
+    throw new Error(`Error at '${response.url}': ${await response.text()}`);
+  }
 };
 
 const get = async (path: string): Promise<JSONValue> => {
   const response = await fetch(getUrl(path));
+  await throwOnResponseError(response);
   return response.json();
 };
 const post = async (path: string, data: JSONValue): Promise<JSONValue> => {
@@ -19,6 +30,7 @@ const post = async (path: string, data: JSONValue): Promise<JSONValue> => {
       'Content-Type': 'application/json',
     },
   });
+  await throwOnResponseError(response);
   return response.json();
 };
 

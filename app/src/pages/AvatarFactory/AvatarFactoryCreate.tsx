@@ -24,9 +24,10 @@ const AvatarFactoryCreate = () => {
         name: formData.name.value,
         description: formData.description.value,
       });
-      navigate(`/avatar-factory/${(response as JSONObject)['id']}`, { replace: true });
+      navigate(`/avatar-factory/${(response as JSONObject)['id']}/edit`, { replace: true });
     } catch (e) {
-      console.log('Error', e);
+      console.error('Error', e);
+      alert(`Hmm. Looks like an Error!\n${e}`);
     }
   };
 

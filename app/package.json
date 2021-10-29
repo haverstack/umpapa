@@ -50,7 +50,9 @@
   "dependencies": {
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/typography": "^0.4.1",
+    "eslint-plugin-react-hooks": "^4.2.1-alpha-9c8161ba8-20211028",
     "history": "^5.0.1",
+    "nanoid": "^3.1.30",
     "preact": "^10.5.15",
     "react-router-dom": "^6.0.0-beta.8"
   },
@@ -63,7 +65,8 @@
     "root": true,
     "parser": "@typescript-eslint/parser",
     "plugins": [
-      "prefer-arrow"
+      "prefer-arrow",
+      "@typescript-eslint"
     ],
     "extends": [
       "eslint:recommended",
@@ -73,6 +76,8 @@
     ],
     "rules": {
       "no-undef": "off",
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "error",
       "prefer-arrow/prefer-arrow-functions": [
         "warn",
         {
@@ -80,7 +85,8 @@
           "singleReturnOnly": false,
           "classPropertiesAllowed": false
         }
-      ]
+      ],
+      "react-hooks/exhaustive-deps": "error"
     }
   },
   "jest": {

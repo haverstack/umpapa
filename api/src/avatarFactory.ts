@@ -29,7 +29,8 @@ const postAvatarFactory = async (request: Request): Promise<Response> => {
     const id = await avatarFactoryStore.post(data);
     return createResponse({ id }, 201);
   } catch (e) {
-    return createResponse({ error: (<Error>e).toString() }, 400);
+    const message = e instanceof Error ? e.message : String(e);
+    return createResponse({ error: message }, 400);
   }
 };
 
